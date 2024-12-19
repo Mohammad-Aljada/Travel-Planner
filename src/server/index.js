@@ -4,7 +4,7 @@ import axios from "axios";
 
 import { config } from 'dotenv';
 
-config(); 
+config();
 
 const app = express();
 app.use(express.json());
@@ -73,7 +73,7 @@ app.delete('/removetrip', async (req, res) => {
   console.log('Received request at /removetrip');
   try {
     res.json({ message: 'Trip deleted' });
-    } catch (error) {
+  } catch (error) {
     console.error('Error deleting trip data:', error);
     res.status(500).send(`Error deleting trip data: ${error.message}`);
   }
@@ -81,8 +81,8 @@ app.delete('/removetrip', async (req, res) => {
 
 const port = process.env.PORT || 3000;
 
-    app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
-  });
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
 
 export default app;
