@@ -1,12 +1,13 @@
-
 # FEND Capstone - Travel Planner App ✈️🚈🚘
 
 ## Overview
 
-Theis Final project  **FEND Capstone - Travel Planner App** In Udacity , this project is allows users to save their upcoming trips, view essential trip details, and remove trips as needed. The app interacts with third-party APIs to retrieve information such as city images, weather forecasts, and country details.
+Theis Final project **FEND Capstone - Travel Planner App** In Udacity , this project is allows users to save their upcoming trips, view essential trip details, and remove trips as needed. The app interacts with third-party APIs to retrieve information such as city images, weather forecasts, and country details.
 
 ## Table of Contents
+
 -[Overview](#overview)
+
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
@@ -25,20 +26,24 @@ Theis Final project  **FEND Capstone - Travel Planner App** In Udacity , this pr
 ## Installation
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/Mohammad-Aljada/Travel-Planner.git
    ```
 
 2. **Navigate to the project directory**:
+
    ```bash
    cd travel-planner-app
    ```
 
 3. **Install dependencies**:
+
    ```bash
    npm install
    ```
-**Notice that Node.js version is v20.15.1**
+
+   **Notice that Node.js version is v20.15.1**
 
 4. **Set up environment variables**:
    Create a `.env` file in the root directory and add the following API keys:
@@ -47,14 +52,19 @@ Theis Final project  **FEND Capstone - Travel Planner App** In Udacity , this pr
    GEONAMES_USERNAME=&username=your_geonames_username
    WEATHERBIT_KEY=your_weatherbit_api_key
    PIXABAY_KEY=your_pixabay_api_key
+   PORT=5000 (optional)
    ```
 
+   \*\*Note : Test And Server Run To Port 5000 or 3000 in Project if First Value Port in `.env` file not Available take value seceond in index.js file in folder server.
+
 5. **Build the app for production**:
+
    ```bash
    npm run build
    ```
 
 6. **Start the server**:
+
    ```bash
    npm start
    ```
@@ -97,5 +107,5 @@ The following APIs are used in this app:
 - **Jest**: JavaScript testing framework.
 
 ## Author
-Mohammad Aljada
 
+Mohammad Aljada
