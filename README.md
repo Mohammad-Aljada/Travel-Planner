@@ -52,7 +52,6 @@ Theis Final project **FEND Capstone - Travel Planner App** In Udacity , this pro
    GEONAMES_USERNAME=&username=your_geonames_username
    WEATHERBIT_KEY=your_weatherbit_api_key
    PIXABAY_KEY=your_pixabay_api_key
-   PORT=5000 (optional)
    ```
 
    \*\*Note : Test And Server Run To Port 5000 or 3000 in Project if First Value Port in `.env` file not Available take value seceond in index.js file in folder server.

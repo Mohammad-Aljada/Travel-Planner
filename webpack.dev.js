@@ -1,15 +1,22 @@
-const path = require("path");
-const webpack = require("webpack");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+import path from 'path';
+import HtmlWebPackPlugin from 'html-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import webpack from 'webpack';
+import { fileURLToPath } from 'url';
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+
+export default  {
     entry: './src/client/index.js',
     mode: 'development',
     devtool: 'source-map',
     output: {
         filename: 'bundle.js', // Ensure the output filename is bundle.js
         path: path.resolve(__dirname, 'dist'),
+         libraryTarget: 'var',
+        library: 'Client'
     },
     module: {
         rules: [

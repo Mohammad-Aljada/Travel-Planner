@@ -1,9 +1,16 @@
-const path = require("path");
-const webpack = require("webpack");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-module.exports = {
+
+import path from "path";
+import webpack from "webpack";
+import HtmlWebPackPlugin from "html-webpack-plugin";
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import WorkboxWebpackPlugin from 'workbox-webpack-plugin'; 
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+export default  {
     entry: './src/client/index.js',
     mode: 'production',
     devtool: 'source-map',
@@ -48,7 +55,16 @@ module.exports = {
             verbose: true,
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
-        })
+        }),
+         // Add WorkboxPlugin to generate a service worker
+         new WorkboxWebpackPlugin.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true,
+            runtimeCaching: [{
+                urlPattern: /\.(?:js|css|html)$/, 
+                handler: 'StaleWhileRevalidate',
+            }]
+        }),
     ],
     resolve: {
         extensions: ['.js', '.scss', '.css'],
